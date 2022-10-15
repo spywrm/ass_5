@@ -23,8 +23,6 @@ class _HomeState extends State<Home> {
       check.add(false);
       var name = controller.text;
       listname.add(name);
-      //  print(controller.text);
-      // print(list.length);
     });
   }
 
@@ -98,8 +96,6 @@ class _HomeState extends State<Home> {
         itemCount: list.length,
         itemBuilder: (context, index) {
           if (list[index]) {
-            print(index);
-            print('print contrainer');
             return MyBox(index);
           }
           return BoxEmpty();
