@@ -18,13 +18,28 @@ class _HomeState extends State<Home> {
         height: 50,
         color: Colors.black12,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Checkbox(value: check[index],onChanged: (newBool){
-              setState(() {
-               check[index] = newBool!;
-              });
-            },),
-            Text(listname[index]),
+            Container(
+              child: Row(
+                children: [
+                  Checkbox(value: check[index],onChanged: (newBool){
+                    setState(() {
+                      check[index] = newBool!;
+                    });
+                  },),
+                  Text(listname[index]),
+                ],
+              ),
+            ),
+            InkWell(
+              onTap:(){
+                setState(() {
+                  list[index]=false;
+                });
+              } ,
+              child: Icon(Icons.clear),
+            ),
           ],
         ),
       ),
